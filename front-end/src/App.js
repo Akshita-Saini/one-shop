@@ -1,17 +1,27 @@
-import logo from './logo.svg';
+import React from 'react';
+import {BrowserRouter, Route, Link} from 'react-router-dom';
 import './App.css';
+import Home from './Views/Home';
+import Product from './Views/Product';
 
 function App() {
+  const openSidebar = () => {
+      document.querySelector(".sidebar").classList.add('open');
+  }
+  const closeSidebar = () => {
+      document.querySelector(".sidebar").classList.remove('open');
+  }
   return (
-<div className="grid-container">
+    <BrowserRouter>
+    <div className="grid-container">
         <header className="header">
             <div className="brand">
-                <button id="sidebar" onclick="openSidebar()">
+                <button id="sidebar" onClick={openSidebar}>
                     &#9776;
                 </button>
-                <a href="index.html">
-                    ONE-STOP
-                </a>
+                <Link to="/">
+                ONE-STOP
+                </Link>
             </div>
             <div className="header-links">
                 <a href="cart.html">Cart</a>
@@ -21,7 +31,7 @@ function App() {
         <aside className="sidebar">
             <div className="sidebar-header">
                 <h1>Categories</h1>
-                <button className="sidebar-close-button" onclick="closeSidebar()">&#10005;</button>
+                <button className="sidebar-close-button" onClick={closeSidebar}>&#10005;</button>
             </div>
             <ul>
                 <li><a>Men</a></li>
@@ -30,59 +40,15 @@ function App() {
         </aside>
         <main className="main">
             <div className="contents">
-                <ul className="products">
-                    <li>
-                        <div className="product">
-                            <img src="/images/1.jpg" className="product-image"/>
-                            <div className="product-name">Plazzo Pants</div>
-                            <div className="product-brand">Gucci</div>
-                            <div className="product-price">1000</div>
-                            <div className="product-rating">5(10 reviews)</div>
-                        </div>
-                    </li>
-                    <li>
-                       <div className="product">
-                            <img src="/images/1.jpg" className="product-image"/>
-                            <div className="product-name">Plazzo Pants</div>
-                            <div className="product-brand">Gucci</div>
-                            <div className="product-price">1000</div>
-                            <div className="product-rating">5(10 reviews)</div>
-                        </div>
-                    </li>
-                    <li>
-                       <div className="product">
-                            <img src="/images/1.jpg" className="product-image"/>
-                            <div className="product-name">Plazzo Pants</div>
-                            <div className="product-brand">Gucci</div>
-                            <div className="product-price">1000</div>
-                            <div className="product-rating">5(10 reviews)</div>
-                        </div>
-                    </li>
-                    <li>
-                       <div className="product">
-                            <img src="/images/1.jpg" className="product-image"/>
-                            <div className="product-name">Plazzo Pants</div>
-                            <div className="product-brand">Gucci</div>
-                            <div className="product-price">1000</div>
-                            <div className="product-rating">5(10 reviews)</div>
-                        </div>
-                    </li>
-                    <li>
-                       <div className="product">
-                            <img src="/images/1.jpg" className="product-image"/>
-                            <div className="product-name">Plazzo Pants</div>
-                            <div className="product-brand">Gucci</div>
-                            <div className="product-price">1000</div>
-                            <div className="product-rating">5(10 reviews)</div>
-                        </div>
-                    </li>
-                </ul>
+              <Route path="/product/:id" component={Product} />
+              <Route exact={true} path="/" component={Home} />
             </div>
         </main>
         <footer class="footer">
             All rights reserved :)
         </footer>
     </div>
+    </BrowserRouter>
   );
 }
 
