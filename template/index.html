@@ -11,7 +11,10 @@
     <div class="grid-container">
         <header class="header">
             <div class="brand">
-                <a href="/">
+                <button id="sidebar" onclick="openSidebar()">
+                    &#9776;
+                </button>
+                <a href="index.html">
                     ONE-STOP
                 </a>
             </div>
@@ -20,6 +23,16 @@
                 <a href="sign-in.html">Sign In</a>
             </div>
         </header>
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h1>Categories</h1>
+                <button class="sidebar-close-button" onclick="closeSidebar()">&#10005;</button>
+            </div>
+            <ul>
+                <li><a>Men</a></li>
+                <li><a>Women</a></li>
+            </ul>
+        </aside>
         <main class="main">
             <div class="contents">
                 <ul class="products">
@@ -75,5 +88,15 @@
             All rights reserved :)
         </footer>
     </div>
+    <script>
+        function openSidebar()
+        {
+            document.querySelector(".sidebar").classList.add('open');
+        }
+
+        function closeSidebar(){
+            document.querySelector(".sidebar").classList.remove('open');
+        }
+    </script>
 </body>
 </html>

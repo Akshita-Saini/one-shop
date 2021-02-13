@@ -42,6 +42,10 @@ a{
     color:var(--primary-color);
 }
 
+.brand a:hover{
+    color:var(--secondary-color);
+}
+
 .header-links a{
     color:var(--primary-color);
 }
@@ -115,4 +119,45 @@ ul{
 .product-image{
     max-width:34rem;
     max-height:34rem;
+}
+
+/* Side bar */
+
+.brand button{
+    background:none;
+    color:var(--primary-color);
+    border:none;
+    font-size:2.60rem;
+}
+.brand button:hover{
+    color:var(--secondary-color);
+    cursor:pointer;
+}
+
+.sidebar{
+    position:fixed;
+    transform:translateX(-30rem);
+    width:18rem;
+    background-color: var(--primary-color);
+    height:100%;
+    padding:1rem;
+}
+
+.sidebar.open{
+    transform:translateX(0);
+}
+
+.sidebar-header{
+    display:flex;
+    justify-content: space-between;
+}
+.sidebar-close-button{
+    margin-top:0.2rem;
+    font-size:1.2rem;
+    cursor:pointer;
+    border:none;
+    background-color: var(--primary-color);
+}
+.sidebar a:hover{
+    color:var(--secondary-color);
 }
