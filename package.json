@@ -1,0 +1,29 @@
+{
+  "name": "one-shop",
+  "version": "1.0.0",
+  "description": "\"an e-commerce application using MERN stack\"",
+  "main": "index.js",
+  "scripts": {
+    "start":"nodemon --watch backend --exec babel-node back-end/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Akshita-Saini/one-shop.git"
+  },
+  "author": "Akshita Saini",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Akshita-Saini/one-shop/issues"
+  },
+  "homepage": "https://github.com/Akshita-Saini/one-shop#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.16",
+    "@babel/core": "^7.12.16",
+    "@babel/node": "^7.12.16",
+    "@babel/preset-env": "^7.12.16",
+    "nodemon": "^2.0.7"
+  }
+}
